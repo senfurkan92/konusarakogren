@@ -1,0 +1,11 @@
+D:\dotnet\KonusarakOgrenProject\DTO\bin\Debug\net5.0\DTO.deps.json
+D:\dotnet\KonusarakOgrenProject\DTO\bin\Debug\net5.0\DTO.dll
+D:\dotnet\KonusarakOgrenProject\DTO\bin\Debug\net5.0\ref\DTO.dll
+D:\dotnet\KonusarakOgrenProject\DTO\bin\Debug\net5.0\DTO.pdb
+D:\dotnet\KonusarakOgrenProject\DTO\obj\Debug\net5.0\DTO.GeneratedMSBuildEditorConfig.editorconfig
+D:\dotnet\KonusarakOgrenProject\DTO\obj\Debug\net5.0\DTO.AssemblyInfoInputs.cache
+D:\dotnet\KonusarakOgrenProject\DTO\obj\Debug\net5.0\DTO.AssemblyInfo.cs
+D:\dotnet\KonusarakOgrenProject\DTO\obj\Debug\net5.0\DTO.csproj.CoreCompileInputs.cache
+D:\dotnet\KonusarakOgrenProject\DTO\obj\Debug\net5.0\DTO.dll
+D:\dotnet\KonusarakOgrenProject\DTO\obj\Debug\net5.0\ref\DTO.dll
+D:\dotnet\KonusarakOgrenProject\DTO\obj\Debug\net5.0\DTO.pdb

@@ -1,0 +1,78 @@
+﻿@model SignUpDto
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/twitter-bootstrap/js/bootstrap.js"></script>
+    <script src="~/js/vue.js"></script>
+    <script src="~/jquery/jquery.js"></script>
+    <script src="~/jquery-validate/jquery.validate.js"></script>
+    <script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div id="forms">
+                <div class="col-lg-4 col-md-6 col-sm-10 col-10 offset-lg-4 offset-md-3 offset-sm-1 offset-1 shadow rounded mt-5 p-lg-4 p-md-2 p-1 border border-3 border-primary">              
+                    <form asp-controller="User" asp-action="SignUp" method="post">
+                        <h3 class="text-uppercase w-100 text-center text-primary">Sign Up</h3>
+                        <div asp-validation-summary="ModelOnly" class="p-3"></div>
+                        <div class="mb-3">
+                            <label asp-for="Email"></label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Phone"></label>
+                            <input asp-for="Phone" class="form-control" />
+                            <span asp-validation-for="Phone" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Password"></label>
+                            <input asp-for="Password" class="form-control" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="RePassword"></label>
+                            <input asp-for="RePassword" class="form-control" />
+                            <span asp-validation-for="RePassword" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <div style="display:flex; flex-wrap: wrap; flex-direction:row; align-items:center; justify-content:space-evenly">
+                                <div style="flex:1" class="px-2">
+                                    <a class="btn btn-secondary w-100" v-on:click="currentForm=1" href="/User/SignIn">
+                                        Sign In
+                                    </a>
+                                </div>
+                                <div style="flex:1" class="px-2">
+                                    <button class="btn btn-primary w-100" type="submit">
+                                        Submit
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const forms = Vue.createApp({
+            data() {
+                return {
+                    currentForm:1
+                }
+            }
+        }).mount("#forms")
+    </script>
+</body>
+</html>

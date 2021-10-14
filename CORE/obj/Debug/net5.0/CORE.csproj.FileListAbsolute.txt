@@ -1,0 +1,11 @@
+D:\dotnet\KonusarakOgrenProject\CORE\bin\Debug\net5.0\CORE.deps.json
+D:\dotnet\KonusarakOgrenProject\CORE\bin\Debug\net5.0\CORE.dll
+D:\dotnet\KonusarakOgrenProject\CORE\bin\Debug\net5.0\ref\CORE.dll
+D:\dotnet\KonusarakOgrenProject\CORE\bin\Debug\net5.0\CORE.pdb
+D:\dotnet\KonusarakOgrenProject\CORE\obj\Debug\net5.0\CORE.GeneratedMSBuildEditorConfig.editorconfig
+D:\dotnet\KonusarakOgrenProject\CORE\obj\Debug\net5.0\CORE.AssemblyInfoInputs.cache
+D:\dotnet\KonusarakOgrenProject\CORE\obj\Debug\net5.0\CORE.AssemblyInfo.cs
+D:\dotnet\KonusarakOgrenProject\CORE\obj\Debug\net5.0\CORE.csproj.CoreCompileInputs.cache
+D:\dotnet\KonusarakOgrenProject\CORE\obj\Debug\net5.0\CORE.dll
+D:\dotnet\KonusarakOgrenProject\CORE\obj\Debug\net5.0\ref\CORE.dll
+D:\dotnet\KonusarakOgrenProject\CORE\obj\Debug\net5.0\CORE.pdb

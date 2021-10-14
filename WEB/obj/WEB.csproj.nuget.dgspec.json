@@ -1,0 +1,426 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\dotnet\\KonusarakOgrenProject\\WEB\\WEB.csproj": {}
+  },
+  "projects": {
+    "D:\\dotnet\\KonusarakOgrenProject\\BLL\\BLL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\dotnet\\KonusarakOgrenProject\\BLL\\BLL.csproj",
+        "projectName": "BLL",
+        "projectPath": "D:\\dotnet\\KonusarakOgrenProject\\BLL\\BLL.csproj",
+        "packagesPath": "C:\\Users\\furka\\.nuget\\packages\\",
+        "outputPath": "D:\\dotnet\\KonusarakOgrenProject\\BLL\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\furka\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\dotnet\\KonusarakOgrenProject\\CORE\\CORE.csproj": {
+                "projectPath": "D:\\dotnet\\KonusarakOgrenProject\\CORE\\CORE.csproj"
+              },
+              "D:\\dotnet\\KonusarakOgrenProject\\DAL\\DAL.csproj": {
+                "projectPath": "D:\\dotnet\\KonusarakOgrenProject\\DAL\\DAL.csproj"
+              },
+              "D:\\dotnet\\KonusarakOgrenProject\\DOMAIN\\DOMAIN.csproj": {
+                "projectPath": "D:\\dotnet\\KonusarakOgrenProject\\DOMAIN\\DOMAIN.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\dotnet\\KonusarakOgrenProject\\CORE\\CORE.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\dotnet\\KonusarakOgrenProject\\CORE\\CORE.csproj",
+        "projectName": "CORE",
+        "projectPath": "D:\\dotnet\\KonusarakOgrenProject\\CORE\\CORE.csproj",
+        "packagesPath": "C:\\Users\\furka\\.nuget\\packages\\",
+        "outputPath": "D:\\dotnet\\KonusarakOgrenProject\\CORE\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\furka\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\dotnet\\KonusarakOgrenProject\\DAL\\DAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\dotnet\\KonusarakOgrenProject\\DAL\\DAL.csproj",
+        "projectName": "DAL",
+        "projectPath": "D:\\dotnet\\KonusarakOgrenProject\\DAL\\DAL.csproj",
+        "packagesPath": "C:\\Users\\furka\\.nuget\\packages\\",
+        "outputPath": "D:\\dotnet\\KonusarakOgrenProject\\DAL\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\furka\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\dotnet\\KonusarakOgrenProject\\CORE\\CORE.csproj": {
+                "projectPath": "D:\\dotnet\\KonusarakOgrenProject\\CORE\\CORE.csproj"
+              },
+              "D:\\dotnet\\KonusarakOgrenProject\\DOMAIN\\DOMAIN.csproj": {
+                "projectPath": "D:\\dotnet\\KonusarakOgrenProject\\DOMAIN\\DOMAIN.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.11, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\dotnet\\KonusarakOgrenProject\\DOMAIN\\DOMAIN.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\dotnet\\KonusarakOgrenProject\\DOMAIN\\DOMAIN.csproj",
+        "projectName": "DOMAIN",
+        "projectPath": "D:\\dotnet\\KonusarakOgrenProject\\DOMAIN\\DOMAIN.csproj",
+        "packagesPath": "C:\\Users\\furka\\.nuget\\packages\\",
+        "outputPath": "D:\\dotnet\\KonusarakOgrenProject\\DOMAIN\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\furka\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\dotnet\\KonusarakOgrenProject\\CORE\\CORE.csproj": {
+                "projectPath": "D:\\dotnet\\KonusarakOgrenProject\\CORE\\CORE.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\dotnet\\KonusarakOgrenProject\\DTO\\DTO.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\dotnet\\KonusarakOgrenProject\\DTO\\DTO.csproj",
+        "projectName": "DTO",
+        "projectPath": "D:\\dotnet\\KonusarakOgrenProject\\DTO\\DTO.csproj",
+        "packagesPath": "C:\\Users\\furka\\.nuget\\packages\\",
+        "outputPath": "D:\\dotnet\\KonusarakOgrenProject\\DTO\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\furka\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\dotnet\\KonusarakOgrenProject\\WEB\\WEB.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\dotnet\\KonusarakOgrenProject\\WEB\\WEB.csproj",
+        "projectName": "WEB",
+        "projectPath": "D:\\dotnet\\KonusarakOgrenProject\\WEB\\WEB.csproj",
+        "packagesPath": "C:\\Users\\furka\\.nuget\\packages\\",
+        "outputPath": "D:\\dotnet\\KonusarakOgrenProject\\WEB\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\furka\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\dotnet\\KonusarakOgrenProject\\BLL\\BLL.csproj": {
+                "projectPath": "D:\\dotnet\\KonusarakOgrenProject\\BLL\\BLL.csproj"
+              },
+              "D:\\dotnet\\KonusarakOgrenProject\\CORE\\CORE.csproj": {
+                "projectPath": "D:\\dotnet\\KonusarakOgrenProject\\CORE\\CORE.csproj"
+              },
+              "D:\\dotnet\\KonusarakOgrenProject\\DAL\\DAL.csproj": {
+                "projectPath": "D:\\dotnet\\KonusarakOgrenProject\\DAL\\DAL.csproj"
+              },
+              "D:\\dotnet\\KonusarakOgrenProject\\DOMAIN\\DOMAIN.csproj": {
+                "projectPath": "D:\\dotnet\\KonusarakOgrenProject\\DOMAIN\\DOMAIN.csproj"
+              },
+              "D:\\dotnet\\KonusarakOgrenProject\\DTO\\DTO.csproj": {
+                "projectPath": "D:\\dotnet\\KonusarakOgrenProject\\DTO\\DTO.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

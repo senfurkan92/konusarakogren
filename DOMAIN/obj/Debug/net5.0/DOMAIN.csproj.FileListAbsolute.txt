@@ -1,0 +1,15 @@
+D:\dotnet\KonusarakOgrenProject\DOMAIN\bin\Debug\net5.0\DOMAIN.deps.json
+D:\dotnet\KonusarakOgrenProject\DOMAIN\bin\Debug\net5.0\DOMAIN.dll
+D:\dotnet\KonusarakOgrenProject\DOMAIN\bin\Debug\net5.0\ref\DOMAIN.dll
+D:\dotnet\KonusarakOgrenProject\DOMAIN\bin\Debug\net5.0\DOMAIN.pdb
+D:\dotnet\KonusarakOgrenProject\DOMAIN\bin\Debug\net5.0\CORE.dll
+D:\dotnet\KonusarakOgrenProject\DOMAIN\bin\Debug\net5.0\CORE.pdb
+D:\dotnet\KonusarakOgrenProject\DOMAIN\obj\Debug\net5.0\DOMAIN.csproj.AssemblyReference.cache
+D:\dotnet\KonusarakOgrenProject\DOMAIN\obj\Debug\net5.0\DOMAIN.GeneratedMSBuildEditorConfig.editorconfig
+D:\dotnet\KonusarakOgrenProject\DOMAIN\obj\Debug\net5.0\DOMAIN.AssemblyInfoInputs.cache
+D:\dotnet\KonusarakOgrenProject\DOMAIN\obj\Debug\net5.0\DOMAIN.AssemblyInfo.cs
+D:\dotnet\KonusarakOgrenProject\DOMAIN\obj\Debug\net5.0\DOMAIN.csproj.CoreCompileInputs.cache
+D:\dotnet\KonusarakOgrenProject\DOMAIN\obj\Debug\net5.0\DOMAIN.csproj.CopyComplete
+D:\dotnet\KonusarakOgrenProject\DOMAIN\obj\Debug\net5.0\DOMAIN.dll
+D:\dotnet\KonusarakOgrenProject\DOMAIN\obj\Debug\net5.0\ref\DOMAIN.dll
+D:\dotnet\KonusarakOgrenProject\DOMAIN\obj\Debug\net5.0\DOMAIN.pdb
