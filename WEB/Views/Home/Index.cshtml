@@ -1,7 +1,118 @@
-﻿
+﻿@model List<ArticleOption>
+
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<div id="vm" v-cloak>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 col-sm-12 col-12 offset-lg-2 offset-md-1 mt-5 mb-5">
+                <div class="mb-3 shadow py-3 px-2 bg-light">
+                    <h2 class="w-100 text-center">Select Article</h2>
+                    <select class="form-control" v-model="url" v-on:change="getArticleContent()" v-bind:disabled="fetchOp">
+                        <option value="empty" disabled>Select Article</option>
+                        @{
+                            foreach (var item in Model)
+                            {
+                                <option value="@item.Url">@item.Title</option>
+                            }
+                        }
+                    </select>
+                </div>
+                <div class="mb-3 shadow py-3 px-2 bg-light">
+                    <h3 class="w-100 text-center">Article Content</h3>
+                    <div class="text-center" v-if="fetchOp">
+                        <div class="spinner-border" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <br />
+                        <span>Loading...</span>
+                    </div>
+                    <div v-else>
+                        <article v-html="content"></article>
+                    </div>
+                </div>
+                <div class="mb-3 shadow py-3 px-2 bg-light">
+                    <h3 class="w-100 text-center">Questions</h3>   
+                    <div class="row">
+                        <div class="col-lg-6 col-12 p-2" v-for="value,key,index in questions">
+                            <div class="card">
+                                <div class="card-header bg-info">
+                                    <input class="form-control" v-bind:placeholder="`Question-${index+1}`" v-model="questions[key].content"/>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <input class="form-control" placeholder="Answer-A" v-model="questions[key].a" />
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input class="form-control" placeholder="Answer-B" v-model="questions[key].b" />
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input class="form-control" placeholder="Answer-C" v-model="questions[key].c" />
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input class="form-control" placeholder="Answer-D" v-model="questions[key].d" />
+                                    </li>
+                                    <li class="list-group-item">
+                                        <small>Correct Option</small>
+                                        <select class="form-control" v-model="questions[key].correct">
+                                            <option value="a">A</option>
+                                            <option value="b">B</option>
+                                            <option value="c">C</option>
+                                            <option value="d">D</option>
+                                        </select>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button class="w-100 btn btn-success"><b>Save</b></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const vm = Vue.createApp({
+        data() {
+            return {
+                url: 'empty',
+                content: '<div class="w-100 text-center">After article selection, this area will be filled with article content</div>',
+                ready: false,
+                fetchOp: false,
+                questions: {},
+            }
+        },
+        created() {
+            for (let i = 0; i < 4; i++) {
+                this.questions[`q${i+1}`] = {
+                    content: '',
+                    a: '',
+                    b: '',
+                    c: '',
+                    d: '',
+                    correct: 'a',
+                };
+            }
+            console.log(this.questions);
+        },
+        methods: {
+            getArticleContent() {
+                this.fetchOp = true;
+                this.ready = false;
+                axios.post("/Service/Scrap/GetArticleContent", { url: this.url })
+                    .then(resp => {
+                        this.content = resp.data;
+                        this.ready = true;
+                    })
+                    .catch(err => console.log(err))
+                    .finally(_ => this.fetchOp = false)
+            }
+        }
+    }).mount('#vm');
+</script>
 

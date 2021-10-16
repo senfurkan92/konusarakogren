@@ -40,9 +40,15 @@
           "DAL": "1.0.0",
           "DOMAIN": "1.0.0",
           "DTO": "1.0.0",
+          "HtmlAgilityPack": "1.11.37",
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "5.0.11",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "5.0.2",
           "Newtonsoft.Json": "13.0.1",
+          "Selenium.Chrome.WebDriver": "85.0.0",
+          "Selenium.Firefox.WebDriver": "0.27.0",
+          "Selenium.Microsoft.Webdriver2": "2.0.10586.1",
+          "Selenium.WebDriver": "4.0.0",
+          "Selenium.WebDriverBackedSelenium": "4.0.0",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "5.0.0.0",
@@ -357,6 +363,17 @@
         },
         "compile": {
           "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        }
+      },
+      "HtmlAgilityPack/1.11.37": {
+        "runtime": {
+          "lib/netstandard2.0/HtmlAgilityPack.dll": {
+            "assemblyVersion": "1.11.37.0",
+            "fileVersion": "1.11.37.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/HtmlAgilityPack.dll": {}
         }
       },
       "Humanizer.Core/2.2.0": {
@@ -1366,6 +1383,37 @@
       "runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
+      "Selenium.Chrome.WebDriver/85.0.0": {},
+      "Selenium.Firefox.WebDriver/0.27.0": {},
+      "Selenium.Microsoft.Webdriver2/2.0.10586.1": {},
+      "Selenium.WebDriver/4.0.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "runtime": {
+          "lib/net5.0/WebDriver.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/net5.0/WebDriver.dll": {}
+        }
+      },
+      "Selenium.WebDriverBackedSelenium/4.0.0": {
+        "dependencies": {
+          "Selenium.WebDriver": "4.0.0"
+        },
+        "runtime": {
+          "lib/net5.0/Selenium.WebDriverBackedSelenium.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/net5.0/Selenium.WebDriverBackedSelenium.dll": {}
+        }
+      },
       "SQLitePCLRaw.bundle_e_sqlite3/2.0.4": {
         "dependencies": {
           "SQLitePCLRaw.core": "2.0.4",
@@ -4169,6 +4217,13 @@
       "path": "automapper.extensions.microsoft.dependencyinjection/8.1.1",
       "hashPath": "automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512"
     },
+    "HtmlAgilityPack/1.11.37": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HioktZJuMHVW7QTwVayHDoBL8dPL68vGRLFdQXYNuSJkVfhxn6xihcocUgbR+B1Lm/YesigUvWrdH0JY+PZ+0g==",
+      "path": "htmlagilitypack/1.11.37",
+      "hashPath": "htmlagilitypack.1.11.37.nupkg.sha512"
+    },
     "Humanizer.Core/2.2.0": {
       "type": "package",
       "serviceable": true,
@@ -4714,6 +4769,41 @@
       "sha512": "sha512-VB5cn/7OzUfzdnC8tqAIMQciVLiq2epm2NrAm1E9OjNRyG4lVhfR61SMcLizejzQP8R8Uf/0l5qOIbUEi+RdEg==",
       "path": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "hashPath": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512"
+    },
+    "Selenium.Chrome.WebDriver/85.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wRg7it2bBMyYtOsarTy0bWtS2fCZI08KGTef2kH381DYpGP+wX8j6f/7ABv1nmrUj5CCVmTeDeYeXS5g00JXSw==",
+      "path": "selenium.chrome.webdriver/85.0.0",
+      "hashPath": "selenium.chrome.webdriver.85.0.0.nupkg.sha512"
+    },
+    "Selenium.Firefox.WebDriver/0.27.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HwCaTaa+snzkLF7ZVaxKSmdttKm+KXT7HOY8c1q8p9E7x05+WHqw5XaZjUGFytVT1+0FkgUoH/u/I+csPLeJAg==",
+      "path": "selenium.firefox.webdriver/0.27.0",
+      "hashPath": "selenium.firefox.webdriver.0.27.0.nupkg.sha512"
+    },
+    "Selenium.Microsoft.Webdriver2/2.0.10586.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HYxE9EPFXSh/E+VYINIa5s+zKoweTJYlfzd62UvSpN01pfxWQNP67OMKuroxqkFMtzbWbR7QiCq3DgI0KOS6fQ==",
+      "path": "selenium.microsoft.webdriver2/2.0.10586.1",
+      "hashPath": "selenium.microsoft.webdriver2.2.0.10586.1.nupkg.sha512"
+    },
+    "Selenium.WebDriver/4.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9v3Dfq/y2j0QMNu0X6YsnKTPstR2rhgbmO9yV/WWoQFBAmPN8yLHoSX6S9gdDUjQMfYJ9gaNFCHX2ZpUo4mQQA==",
+      "path": "selenium.webdriver/4.0.0",
+      "hashPath": "selenium.webdriver.4.0.0.nupkg.sha512"
+    },
+    "Selenium.WebDriverBackedSelenium/4.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xjw5Q9vXbCjEZwVlpn4g7O04qRJYHmvyR+K1ChI9w4Dm2Im5US4edWQmQqMHoR8Wkub72ZinQZ6QLJnMdzIn+g==",
+      "path": "selenium.webdriverbackedselenium/4.0.0",
+      "hashPath": "selenium.webdriverbackedselenium.4.0.0.nupkg.sha512"
     },
     "SQLitePCLRaw.bundle_e_sqlite3/2.0.4": {
       "type": "package",

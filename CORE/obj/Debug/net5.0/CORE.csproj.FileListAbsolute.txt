@@ -9,3 +9,4 @@ D:\dotnet\KonusarakOgrenProject\CORE\obj\Debug\net5.0\CORE.csproj.CoreCompileInp
 D:\dotnet\KonusarakOgrenProject\CORE\obj\Debug\net5.0\CORE.dll
 D:\dotnet\KonusarakOgrenProject\CORE\obj\Debug\net5.0\ref\CORE.dll
 D:\dotnet\KonusarakOgrenProject\CORE\obj\Debug\net5.0\CORE.pdb
+D:\dotnet\KonusarakOgrenProject\CORE\obj\Debug\net5.0\CORE.csproj.AssemblyReference.cache

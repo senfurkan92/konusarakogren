@@ -9,3 +9,4 @@ D:\dotnet\KonusarakOgrenProject\DTO\obj\Debug\net5.0\DTO.csproj.CoreCompileInput
 D:\dotnet\KonusarakOgrenProject\DTO\obj\Debug\net5.0\DTO.dll
 D:\dotnet\KonusarakOgrenProject\DTO\obj\Debug\net5.0\ref\DTO.dll
 D:\dotnet\KonusarakOgrenProject\DTO\obj\Debug\net5.0\DTO.pdb
+D:\dotnet\KonusarakOgrenProject\DTO\obj\Debug\net5.0\DTO.csproj.AssemblyReference.cache

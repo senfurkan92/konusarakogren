@@ -5,16 +5,28 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\" />
+    <Folder Include="Areas\Service\Controllers\" />
+    <Folder Include="Areas\Service\Data\" />
+    <Folder Include="Areas\Service\Models\" />
+    <Folder Include="Areas\Service\Views\" />
     <Folder Include="Models\MapProfiles\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="wwwroot\exe\" />
+    <Folder Include="wwwroot\chrome\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.37" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.11" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Selenium.Chrome.WebDriver" Version="85.0.0" />
+    <PackageReference Include="Selenium.Firefox.WebDriver" Version="0.27.0" />
+    <PackageReference Include="Selenium.Microsoft.Webdriver2" Version="2.0.10586.1" />
+    <PackageReference Include="Selenium.WebDriver" Version="4.0.0" />
+    <PackageReference Include="Selenium.WebDriverBackedSelenium" Version="4.0.0" />
   </ItemGroup>
 
   <ItemGroup>
