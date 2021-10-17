@@ -8,6 +8,11 @@ namespace CORE.Models
 {
     public static class ErrorManagement
     {
+        /// <summary>
+        /// recursive metot ile dip hataya ulasim
+        /// </summary>
+        /// <param name="ex"></param>
+        /// <returns></returns>
         public static Exception GetInnestExp(this Exception ex)
         {
             if (ex.InnerException == null) return ex;

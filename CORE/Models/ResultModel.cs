@@ -2,6 +2,9 @@
 
 namespace CORE.Models
 {
+    /// <summary>
+    /// tum yapıların ortak response donmesi
+    /// </summary>
     public class ResultModel
     {
         public bool Success { get; set; }
@@ -23,6 +26,11 @@ namespace CORE.Models
         }
     }
 
+    /// <summary>
+    /// tum yapıların ortak response donmesi
+    /// islem yapilan/yapilacak verinin de dondurulmesi
+    /// </summary>
+    /// <typeparam name="TData"></typeparam>
     public class ResultModel<TData> : ResultModel
     {
         public TData Data { get; set; }

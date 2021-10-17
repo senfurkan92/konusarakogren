@@ -20,6 +20,11 @@ namespace WEB.Controllers
             this.signInManager = signInManager;
         }
 
+        /// <summary>
+        /// signIn formunun sunulmasi
+        /// validation icin jquery kullanilmistir
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult SignIn()
         {
@@ -68,6 +73,11 @@ namespace WEB.Controllers
             }
         }
 
+        /// <summary>
+        /// signUp formunun sunulmasi
+        /// validation icin jquery kullanilmistir
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult SignUp()
         {

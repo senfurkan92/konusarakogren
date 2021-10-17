@@ -20,6 +20,10 @@ namespace WEB.Controllers
     [Authorize]
     public class HomeController : Controller
     {
+        /// <summary>
+        /// yeni quiz olusturulmasi
+        /// </summary>
+        /// <returns></returns>
         public IActionResult Index()
         {
             HtmlWeb web = new HtmlWeb();

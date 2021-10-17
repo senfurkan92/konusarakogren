@@ -10,6 +10,10 @@ namespace WEB.Controllers
     [Authorize]
     public class ManageController : Controller
     {
+        /// <summary>
+        /// quiz silinmesi
+        /// </summary>
+        /// <returns></returns>
         public IActionResult Index()
         {
             return View();

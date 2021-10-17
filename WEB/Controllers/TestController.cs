@@ -19,12 +19,21 @@ namespace WEB.Controllers
             this.quizManager = quizManager;
         }
 
+        /// <summary>
+        /// baslanilacak quiz secimi
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
 
+        /// <summary>
+        /// secilen quizin sunulmasi
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult TakeQuiz(int id)
         {        

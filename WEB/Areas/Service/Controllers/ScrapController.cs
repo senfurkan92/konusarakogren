@@ -27,6 +27,12 @@ namespace WEB.Areas
             this.env = env;
         }
 
+        /// <summary>
+        /// selenium ile wired.com'dan article iceriginin getirilmesi
+        /// article icerigi reklam ise hata olusmaktadir
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult GetArticleContent([FromBody] object data)
         {

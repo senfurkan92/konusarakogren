@@ -10,6 +10,10 @@ using System.Threading.Tasks;
 
 namespace CORE.Data.Abstract
 {
+    /// <summary>
+    /// Crud işlemelerinin generic olarak yapılabilmesi ve soyutlama saglanarak dependecyInjection kullanılabilmesi
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public interface IRepository<T> where T : IBaseModel
     {
         ResultModel<T> Insert(T baseModel);

@@ -12,6 +12,11 @@ using System.Threading.Tasks;
 
 namespace CORE.Data.Concrete
 {
+    /// <summary>
+    /// Crud işlemelerinin generic olarak yapılabilmesi
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <typeparam name="TContext"></typeparam>
     public class Repository<T, TContext> : IRepository<T>
         where T : class, IBaseModel
         where TContext : DbContext

@@ -16,6 +16,10 @@ namespace WEB.Extentions
 {
     public static class ExtentionManagement
     {
+        /// <summary>
+        /// dependencyInjection yapilarinin kurulmasi
+        /// </summary>
+        /// <param name="services"></param>
         public static void AddDiConfig(this IServiceCollection services)
         {
             services.AddTransient<IDal_Quiz, Dal_Quiz>();
@@ -26,6 +30,10 @@ namespace WEB.Extentions
             services.AddTransient<IService_Answer, Manager_Answer>();
         }
 
+        /// <summary>
+        /// entityframeworkidentity ve cookie konfigurasyonu
+        /// </summary>
+        /// <param name="services"></param>
         public static void AddIdentityConfig(this IServiceCollection services)
         {
             // dbcontext
@@ -65,6 +73,10 @@ namespace WEB.Extentions
             
         }
 
+        /// <summary>
+        /// automapper konfigurasyonu
+        /// </summary>
+        /// <param name="services"></param>
         public static void AddDtoMapConfig(this IServiceCollection services)
         {
             services.AddAutoMapper(config =>
@@ -73,6 +85,10 @@ namespace WEB.Extentions
             });
         }
 
+        /// <summary>
+        /// cors konfigurasyonu
+        /// </summary>
+        /// <param name="services"></param>
         public static void AddCorsConfig(this IServiceCollection services)
         {
             services.AddCors(config =>

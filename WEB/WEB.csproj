@@ -9,7 +9,6 @@
     <Folder Include="Areas\Service\Models\" />
     <Folder Include="Areas\Service\Views\" />
     <Folder Include="Models\MapProfiles\" />
-    <Folder Include="ViewModels\" />
     <Folder Include="wwwroot\exe\" />
     <Folder Include="wwwroot\chrome\" />
   </ItemGroup>

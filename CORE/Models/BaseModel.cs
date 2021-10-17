@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace CORE.Models
 {
+    /// <summary>
+    /// Her entity icin ortak olacak propertylerin belirlenmesi
+    /// FluentApi yapilarinin kalitim ile kisaltilmasına icin destek 
+    /// </summary>
     public abstract class BaseModel : IBaseModel
     {
         public int Id { get; set; }

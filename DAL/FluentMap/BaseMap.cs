@@ -9,6 +9,11 @@ using System.Threading.Tasks;
 
 namespace DAL.FluentMap
 {
+    /// <summary>
+    /// IBaseModel bazlı entityType konfigurasyonu
+    /// virtual yapılarak her bir entity icin override saglanmistir
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public abstract class BaseMap<T> : IEntityTypeConfiguration<T>
         where T : class, IBaseModel
     {

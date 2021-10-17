@@ -10,13 +10,19 @@ using System.Threading.Tasks;
 
 namespace DAL.Context
 {
+    /// <summary>
+    /// entityframework codefirst yapısına uygun dbcontext 
+    /// entityframeworkindentity sinifinin kalitilmasi ve user,role sınıfları ile konfigurasyon
+    /// </summary>
     public class ProjectDbContext : IdentityDbContext<User,Role,String>
     {
+        // sqlite connectionstring verilmesi
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite("Data Source=D:\\SqliteDBs\\konusarakogren.db;");
         }
 
+        // fluentApi uygulanmasi
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

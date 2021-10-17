@@ -29,6 +29,12 @@ namespace WEB.Areas.Service.Controllers
             };
         }
 
+        /// <summary>
+        /// "Home/Index" yolundan gelen yeni quiz kayit isteginin yapilmasi
+        /// buraya sorgu vue.js icinde kullanilan axios ile yapilmistir
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> Save([FromBody] object data)
         {
@@ -132,6 +138,11 @@ namespace WEB.Areas.Service.Controllers
             return Ok(new {state = result.Success});
         }
 
+        /// <summary>
+        /// "/Manager/Index" ve "/Test/Index" yollarında gelen talep ile mevcut quizlerin dondurulmesi
+        /// buraya sorgu vue.js icinde kullanilan axios ile yapilmistir
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -139,6 +150,12 @@ namespace WEB.Areas.Service.Controllers
             return Ok(JsonConvert.SerializeObject(query, serializerSettings));
         }
 
+        /// <summary>
+        /// "/Test/TakeQuiz" yolu icin ilgili quizin getirilmesi
+        /// buraya sorgu vue.js icinde kullanilan axios ile yapilmistir
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
@@ -146,6 +163,12 @@ namespace WEB.Areas.Service.Controllers
             return Ok(JsonConvert.SerializeObject(query, serializerSettings));
         }
 
+        /// <summary>
+        /// "/Manager/Index" yolundan gelen talep ile quizin silinmesi
+        /// buraya sorgu vue.js icinde kullanilan axios ile yapilmistir
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
@@ -154,6 +177,12 @@ namespace WEB.Areas.Service.Controllers
             return Ok(JsonConvert.SerializeObject(query, serializerSettings));
         }
 
+        /// <summary>
+        /// "/Test/TakeQuiz" yolundan gelen talep ile quiz cevaplarinin donulmesi
+        /// buraya sorgu vue.js icinde kullanilan axios ile yapilmistir
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> Check([FromBody] object data)
         {
