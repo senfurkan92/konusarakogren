@@ -1,4 +1,4 @@
-﻿using CORE.Data.Models;
+﻿using CORE.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +9,7 @@ namespace DOMAIN.Entities
 {
     public class Quiz : BaseModel
     {
+        public string ArticleTitle { get; set; }
         public string ArticleContent { get; set; }
 
         // relation

@@ -13,10 +13,11 @@ using Microsoft.AspNetCore.Hosting;
 using System.IO;
 using OpenQA.Selenium.Interactions;
 using Selenium;
+using System.Web;
 
 namespace WEB.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class HomeController : Controller
     {
         public IActionResult Index()
@@ -33,7 +34,7 @@ namespace WEB.Controllers
              
                 list.Add(new ArticleOption()
                 {
-                    Title = title,
+                    Title = HttpUtility.HtmlDecode(title),
                     Url = url
                 });
             }

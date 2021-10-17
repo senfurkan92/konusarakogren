@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CORE.Data.Models
+namespace CORE.Models
 {
     public class ResultModel
     {

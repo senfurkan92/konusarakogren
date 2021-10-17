@@ -464,3 +464,7 @@ D:\dotnet\KonusarakOgrenProject\WEB\obj\Debug\net5.0\Razor\Views\User\SignUp.csh
 D:\dotnet\KonusarakOgrenProject\WEB\bin\Debug\net5.0\HtmlAgilityPack.dll
 D:\dotnet\KonusarakOgrenProject\WEB\bin\Debug\net5.0\WebDriver.dll
 D:\dotnet\KonusarakOgrenProject\WEB\bin\Debug\net5.0\Selenium.WebDriverBackedSelenium.dll
+D:\dotnet\KonusarakOgrenProject\WEB\obj\Debug\net5.0\Razor\Views\Partials\NavbarPartial.cshtml.g.cs
+D:\dotnet\KonusarakOgrenProject\WEB\obj\Debug\net5.0\Razor\Views\Manage\Index.cshtml.g.cs
+D:\dotnet\KonusarakOgrenProject\WEB\obj\Debug\net5.0\Razor\Views\Test\Index.cshtml.g.cs
+D:\dotnet\KonusarakOgrenProject\WEB\obj\Debug\net5.0\Razor\Views\Test\TakeQuiz.cshtml.g.cs

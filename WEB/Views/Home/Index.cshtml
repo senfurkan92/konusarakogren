@@ -8,9 +8,9 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-8 col-md-10 col-sm-12 col-12 offset-lg-2 offset-md-1 mt-5 mb-5">
-                <div class="mb-3 shadow py-3 px-2 bg-light">
-                    <h2 class="w-100 text-center">Select Article</h2>
-                    <select class="form-control" v-model="url" v-on:change="getArticleContent()" v-bind:disabled="fetchOp">
+                <div class="mb-1 shadow py-3 px-2 bg-light rounded-top">
+                    <h2 class="w-100 text-center bg-dark p-2 rounded text-light">Select Article</h2>
+                    <select id="selectArticle" class="form-control" v-model="url" v-on:change="getArticleContent()" v-bind:disabled="fetchOp">
                         <option value="empty" disabled>Select Article</option>
                         @{
                             foreach (var item in Model)
@@ -20,8 +20,8 @@
                         }
                     </select>
                 </div>
-                <div class="mb-3 shadow py-3 px-2 bg-light">
-                    <h3 class="w-100 text-center">Article Content</h3>
+                <div class="mb-1 shadow py-3 px-2 bg-light">
+                    <h3 class="w-100 text-center bg-dark p-2 rounded text-light">Article Content</h3>
                     <div class="text-center" v-if="fetchOp">
                         <div class="spinner-border" role="status">
                             <span class="visually-hidden">Loading...</span>
@@ -29,34 +29,35 @@
                         <br />
                         <span>Loading...</span>
                     </div>
-                    <div v-else>
+                    <div v-else style="max-height:300px; overflow-y:scroll" class="p-3">
                         <article v-html="content"></article>
                     </div>
                 </div>
-                <div class="mb-3 shadow py-3 px-2 bg-light">
-                    <h3 class="w-100 text-center">Questions</h3>   
+                <div class="mb-3 shadow py-3 px-3 bg-light rounded-bottom" v-if="ready">
+                    <h3 class="w-100 text-center bg-dark p-2 rounded text-light">Questions</h3>
                     <div class="row">
-                        <div class="col-lg-6 col-12 p-2" v-for="value,key,index in questions">
-                            <div class="card">
-                                <div class="card-header bg-info">
-                                    <input class="form-control" v-bind:placeholder="`Question-${index+1}`" v-model="questions[key].content"/>
+                        <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-12 p-2" v-for="value,key,index in questions">
+                            <div class="card p-4">
+                                <h5 class="w-100 text-center"><i><u>Question-{{index+1}}</u></i></h5>
+                                <div class="card-header bg-secondary rounded-top">
+                                    <input class="form-control" v-bind:placeholder="`Question-${index+1}`" v-model="questions[key].content" v-bind:class="{'is-invalid':questions[key].content==''}" />
                                 </div>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <input class="form-control" placeholder="Answer-A" v-model="questions[key].a" />
+                                <ul class="list-group list-group-flush rounded-bottom">
+                                    <li class="list-group-item" style="background-color:lightgrey">
+                                        <input class="form-control" placeholder="Answer-A" v-model="questions[key].a" v-bind:class="{'is-invalid':questions[key].a==''}" />
                                     </li>
-                                    <li class="list-group-item">
-                                        <input class="form-control" placeholder="Answer-B" v-model="questions[key].b" />
+                                    <li class="list-group-item" style="background-color:lightgrey">
+                                        <input class="form-control" placeholder="Answer-B" v-model="questions[key].b" v-bind:class="{'is-invalid':questions[key].b==''}" />
                                     </li>
-                                    <li class="list-group-item">
-                                        <input class="form-control" placeholder="Answer-C" v-model="questions[key].c" />
+                                    <li class="list-group-item" style="background-color:lightgrey">
+                                        <input class="form-control" placeholder="Answer-C" v-model="questions[key].c" v-bind:class="{'is-invalid':questions[key].c==''}" />
                                     </li>
-                                    <li class="list-group-item">
-                                        <input class="form-control" placeholder="Answer-D" v-model="questions[key].d" />
+                                    <li class="list-group-item" style="background-color:lightgrey">
+                                        <input class="form-control" placeholder="Answer-D" v-model="questions[key].d" v-bind:class="{'is-invalid':questions[key].d==''}" />
                                     </li>
-                                    <li class="list-group-item">
-                                        <small>Correct Option</small>
-                                        <select class="form-control" v-model="questions[key].correct">
+                                    <li class="list-group-item" style="background-color:lightgrey">
+                                        <h6 class="w-100 text-center text-dark">Correct Answer</h6>
+                                        <select class="form-control" v-model="questions[key].correct" v-bind:class="{'is-invalid':questions[key].correct==''}">
                                             <option value="a">A</option>
                                             <option value="b">B</option>
                                             <option value="c">C</option>
@@ -66,8 +67,21 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-12">
-                            <button class="w-100 btn btn-success"><b>Save</b></button>
+                        <div class="col-12 p-3 text-center">
+                            <button class="btn" v-bind:class="{'btn-success':saveAvailable,'btn-danger':!saveAvailable}" v-on:click="save()" v-bind:disabled="!saveAvailable || sending" style="min-width:300px">
+                                <div v-if="sending">
+                                    <div class="spinner-border spinner-border-sm text-light" role="status">
+                                        <span class="visually-hidden">Loading...</span>
+                                    </div>
+                                    Saving
+                                </div>
+                                <div v-else-if="saveAvailable">
+                                    <b>Save</b>
+                                </div>
+                                <div v-else-if="!saveAvailable">
+                                    <b>Fill all questions and answers</b>
+                                </div>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -84,6 +98,7 @@
                 content: '<div class="w-100 text-center">After article selection, this area will be filled with article content</div>',
                 ready: false,
                 fetchOp: false,
+                sending: false,
                 questions: {},
             }
         },
@@ -98,19 +113,83 @@
                     correct: 'a',
                 };
             }
-            console.log(this.questions);
+        },
+        computed: {
+            saveAvailable() {
+                for (let key in this.questions) {
+                    for (let subkey in this.questions[key]) {
+                        if (this.questions[key][subkey] == '') {
+                            return false;
+                        }
+                    }
+                }
+                return true;
+            }
         },
         methods: {
             getArticleContent() {
                 this.fetchOp = true;
                 this.ready = false;
+                this.resetQuestions();
                 axios.post("/Service/Scrap/GetArticleContent", { url: this.url })
                     .then(resp => {
-                        this.content = resp.data;
-                        this.ready = true;
+                        this.content = resp.data.content;
+                        if (resp.data.state) {
+                            this.ready = true;
+                        }
                     })
                     .catch(err => console.log(err))
                     .finally(_ => this.fetchOp = false)
+            },
+            save() {
+                this.sending = true;
+                let obj = {
+                    articleTitle : this.findArticleTitle(),
+                    articleContent: this.content,
+                    question: this.questions
+                };
+                axios.post("/Service/Quiz/Save", obj)
+                    .then(resp => {
+                        this.setInitialData();
+                        if (resp.data.state) {
+                            Swal.fire(
+                                'New Quiz',
+                                'New quiz has been added',
+                                'success'
+                            )
+                        } else {
+                            Swal.fire(
+                                'New Quiz',
+                                'New quiz has not been added',
+                                'error'
+                            )
+                        }
+                    })
+                    .catch(err => {
+                        this.setInitialData();
+                        Swal.fire(
+                            'New Quiz',
+                            `New quiz has not been added: ${err}`,
+                            'error'
+                        )
+                    })
+                    .finally(_ => this.sending = false)
+            },
+            resetQuestions() {
+                for (let key in this.questions) {
+                    for (let subkey in this.questions[key]) {
+                        this.questions[key][subkey] = '';
+                    }
+                }
+            },
+            setInitialData() {
+                this.url = 'empty';
+                this.content = '<div class="w-100 text-center">After article selection, this area will be filled with article content</div>';
+                this.ready = false;
+                this.resetQuestions();
+            },
+            findArticleTitle() {
+                return document.getElementById("selectArticle").options[document.getElementById("selectArticle").selectedIndex].text;
             }
         }
     }).mount('#vm');

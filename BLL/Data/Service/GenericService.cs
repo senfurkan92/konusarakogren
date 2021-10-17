@@ -1,4 +1,4 @@
-﻿using CORE.Data.Models;
+﻿using CORE.Models;
 using Microsoft.EntityFrameworkCore.Storage;
 using System;
 using System.Collections.Generic;

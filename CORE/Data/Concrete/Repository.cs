@@ -1,5 +1,4 @@
 ﻿using CORE.Data.Abstract;
-using CORE.Data.Models;
 using CORE.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
@@ -37,7 +36,7 @@ namespace CORE.Data.Concrete
             try
             {
                 var queryResult = dbset.Add(baseModel);
-                if (context.SaveChanges() > 0 && queryResult.Entity != null && queryResult.State == EntityState.Added)
+                if (context.SaveChanges() > 0 && queryResult.Entity != null)
                 {
                     result = new ResultModel<T>(queryResult.Entity, true, "added");
                 }
@@ -60,7 +59,7 @@ namespace CORE.Data.Concrete
             try
             {
                 var queryResult = dbset.Update(baseModel);
-                if (context.SaveChanges() > 0 && queryResult.Entity != null && queryResult.State == EntityState.Modified)
+                if (context.SaveChanges() > 0 && queryResult.Entity != null)
                 {
                     result = new ResultModel<T>(queryResult.Entity, true, "updated");
                 }
@@ -100,7 +99,7 @@ namespace CORE.Data.Concrete
             {
                 var extended = dbset as IQueryable<T>;
                 for (int i = 0; i < tables.Length; i++) extended = extended.Include(tables[i]);
-                var data = dbset.FirstOrDefault(filter);
+                var data = extended.FirstOrDefault(filter);
                 var description = data != null ? "found" : "not found";
                 result = new ResultModel<T>(data,true,description);
             }

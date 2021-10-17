@@ -4,6 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    <link rel="icon" href="/img/unnamed.ico">
     <link href="~/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link href="~/css/main.css" rel="stylesheet" />
     <script src="~/twitter-bootstrap/js/bootstrap.js"></script>
@@ -12,8 +13,10 @@
     <script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
     <script src="~/js/vue.js"></script>
     <script src="~/axios/axios.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body class="bg-secondary">
+    <partial name="~/Views/Partials/NavbarPartial.cshtml"/>
     <div>
         @RenderBody()
     </div>

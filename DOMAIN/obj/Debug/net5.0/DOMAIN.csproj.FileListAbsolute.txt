@@ -9,7 +9,7 @@ D:\dotnet\KonusarakOgrenProject\DOMAIN\obj\Debug\net5.0\DOMAIN.GeneratedMSBuildE
 D:\dotnet\KonusarakOgrenProject\DOMAIN\obj\Debug\net5.0\DOMAIN.AssemblyInfoInputs.cache
 D:\dotnet\KonusarakOgrenProject\DOMAIN\obj\Debug\net5.0\DOMAIN.AssemblyInfo.cs
 D:\dotnet\KonusarakOgrenProject\DOMAIN\obj\Debug\net5.0\DOMAIN.csproj.CoreCompileInputs.cache
-D:\dotnet\KonusarakOgrenProject\DOMAIN\obj\Debug\net5.0\DOMAIN.csproj.CopyComplete
 D:\dotnet\KonusarakOgrenProject\DOMAIN\obj\Debug\net5.0\DOMAIN.dll
 D:\dotnet\KonusarakOgrenProject\DOMAIN\obj\Debug\net5.0\ref\DOMAIN.dll
 D:\dotnet\KonusarakOgrenProject\DOMAIN\obj\Debug\net5.0\DOMAIN.pdb
+D:\dotnet\KonusarakOgrenProject\DOMAIN\obj\Debug\net5.0\DOMAIN.csproj.CopyComplete

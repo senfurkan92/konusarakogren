@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div id="vm" v-cloak>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 col-sm-12 col-12 offset-lg-2 offset-md-1 mt-5 mb-5 bg-light rounded-3 p-3">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th class="text-uppercase">Title</th>
+                            <th class="text-uppercase">Date</th>
+                            <th class="text-uppercase">Operation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="quiz, index in quizzes" v-bind:key="quiz.Id">
+                            <td>{{quiz.Id}}</td>
+                            <td>{{quiz.ArticleTitle}}</td>
+                            <td>{{quiz.InsertDate.split('T')[0]}}</td>
+                            <td>
+                                <button class="btn btn-sm btn-danger" v-on:click="deleteQuiz(quiz.Id, index)">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const vm = Vue.createApp({
+        data() {
+            return {
+                quizzes: []
+            }
+        },
+        created() {
+            this.getAll();
+        },
+        methods: {
+            getAll() {
+                axios.get("/Service/Quiz/GetAll")
+                    .then(resp => {
+                        if (resp.data.Success) {
+                            this.quizzes = resp.data.Data;
+                        } else {
+                            Swal.fire(
+                                'Get All Quizzes',
+                                `An error has been occured : ${resp.data.Erros.join('. ')}`,
+                                'error'
+                            )
+                        }
+                    })
+                    .catch(err => {
+                        Swal.fire(
+                            'Get All Quizzes',
+                            `An error has been occured : ${err}`,
+                            'error'
+                        )
+                    })
+            },
+            deleteQuiz(id, index) {
+                axios.get(`/Service/Quiz/Delete/${id}`)
+                    .then(resp => {
+                        if (resp.data.Success) {
+                            this.quizzes.splice(index, 1);
+                            Swal.fire(
+                                'Delete',
+                                `This quiz has been deleted`,
+                                'success'
+                            )
+                        } else {
+                            Swal.fire(
+                                'Delete',
+                                `An error has been occured : ${resp.data.Erros.join('. ')}`,
+                                'error'
+                            )
+                        }
+                    })
+                    .catch(err => {
+                        Swal.fire(
+                            'Delete',
+                            `An error has been occured : ${err}`,
+                            'error'
+                        )
+                    })
+            }
+        }
+    }).mount('#vm');
+</script>
+
+

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CORE.Data.Models
+namespace CORE.Models
 {
     public abstract class BaseModel : IBaseModel
     {

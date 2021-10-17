@@ -1,0 +1,177 @@
+﻿@model int
+
+@{
+    ViewData["Title"] = "TakeQuiz";
+}
+
+<div id="vm" v-cloak>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 col-sm-12 col-12 offset-lg-2 offset-md-1 mt-5 mb-5 bg-light rounded-3 p-3">
+                <h3 class="w-100 text-center"><u>{{quiz.ArticleTitle}}</u></h3>
+                <div class="w-100 border border-2 border-dark p-3" style="overflow-y:scroll; max-height:300px" v-html="quiz.ArticleContent">
+                </div>
+                <div class="row p-1">
+                    <div class="col-lg-6 col-12 p-3 mt-3 p-1" v-for="question,index in quiz.Questions" v-bind:key="index">
+                        <div class="border border-1 p-2 h-100">
+                            <div class="mb-3">
+                                <b>{{index + 1}} </b> {{question.Content}}
+                            </div>
+                            <div class="mb-2">
+                                @* A *@
+                                <input class="form-check-input" type="radio" value="a" v-model="answers[index].answer" v-bind:disabled="answers[index].correct != ''">
+                                <span class="form-check-label" v-bind:class="getBgClass(index,'a')">
+                                    A) {{question.Answers[0].Content}}
+                                </span>
+                                <br />
+                            </div>
+                            <div class="mb-2">
+                                @* B *@
+                                <input class="form-check-input" type="radio" value="b" v-model="answers[index].answer" v-bind:disabled="answers[index].correct != ''">
+                                <span class="form-check-label" v-bind:class="getBgClass(index,'b')">
+                                    B) {{question.Answers[1].Content}}
+                                </span>
+                                <br />
+                            </div>
+                            <div class="mb-2">
+                                @* C *@
+                                <input class="form-check-input" type="radio" value="c" v-model="answers[index].answer" v-bind:disabled="answers[index].correct != ''">
+                                <span class="form-check-label" v-bind:class="getBgClass(index,'c')">
+                                    C) {{question.Answers[2].Content}}
+                                </span>
+                                <br />
+                            </div>
+                            <div>
+                                @* A *@
+                                <input class="form-check-input" type="radio" value="d" v-model="answers[index].answer" v-bind:disabled="answers[index].correct != ''">
+                                <span class="form-check-label" v-bind:class="getBgClass(index,'d')">
+                                    D) {{question.Answers[3].Content}}
+                                </span>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row px-3 text-center">
+                    <button class="w-100 btn btn-success" v-on:click="submit()" v-bind:disabled="sending" v-if="!finish">
+                        <div v-if="sending">
+                            <div class="spinner-border spinner-border-sm text-light" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <b>Submitting</b>
+                        </div>
+                        <div v-else>
+                            <b>Submit</b>
+                        </div>
+                    </button>
+                    <button class="w-100 btn btn-primary" v-on:click="again()" v-else>
+                        <div>
+                            Again
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const vm = Vue.createApp({
+        data() {
+            return {
+                quizId: @Model,
+                quiz: {},
+                finish : false,
+                sending: false,
+                answers: [
+                    {
+                        correct: "",
+                        answer: ""
+                    },
+                    {
+                        correct: "",
+                        answer: ""
+                    },
+                    {
+                        correct: "",
+                        answer: ""
+                    },
+                    {
+                        correct: "",
+                        answer: ""
+                    }
+                ]
+            }
+        },
+        created() {
+            this.getQuiz();
+        },
+        methods: {
+            getQuiz() {
+                axios.get(`/service/Quiz/Get/${this.quizId}`)
+                    .then(resp => {
+                        if (resp.data.Success) {
+                            this.quiz = resp.data.Data;
+                        }
+                        else {
+                            Swal.fire(
+                                'Quiz',
+                                'Quiz cannot be fetched',
+                                'error'
+                            )
+                        }
+                    })
+                    .catch(err => {
+                        Swal.fire(
+                            'Quiz',
+                            'Quiz cannot be fetched',
+                            'error'
+                        )
+                    })
+            },
+            submit() {
+                let obj = {
+                    quizId: this.quizId,
+                    a1: this.answers[0].answer,
+                    a2: this.answers[1].answer,
+                    a3: this.answers[2].answer,
+                    a4: this.answers[3].answer,
+                }
+                this.sending = true;
+                axios.post("/Service/Quiz/Check", obj)
+                    .then(resp => {
+                        for (let i = 0; i < this.answers.length; i++) {
+                            this.answers[i].correct = resp.data[i];
+                        }
+                        this.finish = true;
+                    })
+                    .catch(err => {
+
+                    })
+                    .finally(_ => {
+                        this.sending = false;
+                    });
+            },
+            getBgClass(index,val) {
+                if (this.answers[0].correct == '') {
+                    return 'bg-transparent';
+                }
+                else if (this.answers[index].answer == val) {
+                    if (this.answers[index].answer == this.answers[index].correct) {
+                        return 'bg-success text-light';
+                    }
+                    else {
+                        return 'bg-danger text-light';
+                    }
+                }
+                else {
+                    return 'bg-transparent';
+                }
+            },
+            again() {
+                location.reload();
+            }
+        }
+    }).mount('#vm');
+</script>
+

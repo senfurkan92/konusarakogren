@@ -35,9 +35,8 @@ namespace DAL.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("IsCorrect")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
+                    b.Property<bool>("IsCorrect")
+                        .HasColumnType("INTEGER");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("INTEGER");
@@ -98,6 +97,9 @@ namespace DAL.Migrations
 
                     b.Property<string>("ArticleContent")
                         .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ArticleTitle")
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime?>("DeleteDate")

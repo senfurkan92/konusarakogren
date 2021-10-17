@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CORE.Data.Models
+namespace CORE.Models
 {
     public interface IBaseModel
     {

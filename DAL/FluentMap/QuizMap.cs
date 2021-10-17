@@ -15,6 +15,7 @@ namespace DAL.FluentMap
         {
             base.Configure(builder);
             builder.ToTable("Quizzes");
+            builder.Property(x => x.ArticleTitle).IsRequired(false);
             builder.Property(x => x.ArticleContent).IsRequired();
 
             // relation
